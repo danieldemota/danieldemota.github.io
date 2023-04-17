@@ -6,10 +6,25 @@
             My Website
         </title>
         <style>
-            body {
-                background-color:gold;
+           @keyframes slowAppear{
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1; 
+            }
+           }
+           
+           body {
+                animation-name: slowAppear;
+                animation-duration: 6s; 
+                animation-fill-mode: forwards;
             }
             h1 {
+                position: relative; 
+                animation-name: appear; 
+                animation-duration: 3s;
+                animation-fill-mode: forwards;
                 text-align: center; 
                 background-color:blue; 
                 margin-top: 15;
