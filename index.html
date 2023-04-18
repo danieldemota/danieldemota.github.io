@@ -23,6 +23,15 @@
                 opacity: 1; 
             }
            }
+
+           @keyframes rotation{
+            from {
+                transform: translate(-50%, -50%)rotate(0deg); 
+            }
+            to {
+                transform: translate(-50%, -50%)rotate(360deg); 
+            }
+           }
            
            body {
                 animation-name: slowAppear;
@@ -35,12 +44,8 @@
                 margin-top: 15;
                 font-family: 'Times New Roman', Times, serif; 
             }
-            li {
-                font-size: medium
-            }
-            h2 {
-                color:blue
-            }
+            li {font-size: medium}
+            h2 {color:blue} 
             div {
                 display: none; 
                 animation-name: appear; 
@@ -55,6 +60,26 @@
                 font-size: 16px; 
                 border-radius: 12px;
                 background-color:rgb(127, 174, 255);
+            }
+            #img1 {
+                width:300px;
+                height: 300px;
+                position: absolute;
+                top: 50%; 
+                left: 65%; 
+                transform: translate(-50%, -50%); 
+                animation: rotation 5s infinite linear; 
+                animation-delay: 2s; 
+            }
+            #img2 {
+                width:300px;
+                height: 300px;
+                position: absolute;
+                top: 50%; 
+                left: 35%; 
+                transform: translate(-50%, -50%); 
+                animation: rotation 5s infinite linear; 
+                animation-delay: 2s; 
             }
         </style>
         <script>
@@ -83,6 +108,7 @@
         <button data-page="page2">About me</button>
         <button data-page="page3">DYOR</button>
         <button data-page="page4">Links</button>
+        <button data-page="page5">Others</button>
 
             <div id="page1">
                 <h2>Information:</h2>
@@ -94,6 +120,7 @@
                     <li>Organized</li>
                     <li>Disciplined</li>
                     <li>Attentive to Detail</li>
+                    <li>Technologically Adept</li>
             </ul>
             </div>
             <div id="page3">
@@ -106,6 +133,10 @@
             <div id="page4">
                 <h2>Links:</h2>
                 View my Linkedin Profile at => <a href="https://www.linkedin.com/in/daniel-doehler-3ba972194">Daniel Doehler</a>
+            </div>
+            <div id="page5">
+                <img id="img1" src="C:\Users\danim\Programming\ethcoin.jpg"> 
+                <img id="img2" src="C:\Users\danim\Programming\bitcoin.jpg"> 
             </div>
     </body>
 </html>
