@@ -15,16 +15,21 @@
             }
            }
            
+           @keyframes appear{
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1; 
+            }
+           }
+           
            body {
                 animation-name: slowAppear;
                 animation-duration: 6s; 
                 animation-fill-mode: forwards;
             }
             h1 {
-                position: relative; 
-                animation-name: appear; 
-                animation-duration: 3s;
-                animation-fill-mode: forwards;
                 text-align: center; 
                 background-color:blue; 
                 margin-top: 15;
@@ -36,25 +41,71 @@
             h2 {
                 color:blue
             }
+            div {
+                display: none; 
+                animation-name: appear; 
+                animation-duration: 2s;
+            }
+            button {
+                position: relative; 
+                left:80px; 
+                top:2px; 
+                padding: 15px 32px;
+                text-align: center;
+                font-size: 16px; 
+                border-radius: 12px;
+                background-color:rgb(127, 174, 255);
+            }
         </style>
+        <script>
+
+            function showPage(page) {
+                document.querySelectorAll('div').forEach(div => {
+                    div.style.display = 'none'; 
+                })
+                document.querySelector(`#${page}`).style.display = 'block'; 
+            }
+
+            document.addEventListener('DOMContentLoaded', function() {
+                document.querySelectorAll('button').forEach(button => {
+                    button.onclick = function() {
+                        showPage(this.dataset.page); 
+                    }
+                })
+            })
+
+        </script>
     </head>
     <body>
         <h1>This is my GitHub Pages website!</h1>
-        <h2>Information:</h2>
-        <p>This is the first web page I am designing, in order to test some of the tricks I've been learning...(100% Work in Progress)</p>
-        
-        <ul>My Skills:
-            <li>Organized</li>
-            <li>Disciplined</li>
-            <li>Attentive to Detail</li>
-        </ul>
-        <h2>Do Your Own Research:</h2>
-        <form action="https://www.google.com/search">
-            <input autocomplete="off" autofocus name="q" placeholder="type" type="search">
-            <input type="submit" value="Google Search"> 
-        </form>
-        <h2>Links:</h2>
-        View my Linkedin Profile at => <a href="https://www.linkedin.com/in/daniel-doehler-3ba972194">Daniel Doehler</a>
 
+        <button data-page="page1">Info</button>
+        <button data-page="page2">About me</button>
+        <button data-page="page3">DYOR</button>
+        <button data-page="page4">Links</button>
+
+            <div id="page1">
+                <h2>Information:</h2>
+                <p>This is the first web page I am designing, in order to test some of the tricks I've been learning...(100% Work in Progress)</p>
+            </div>
+            <div id="page2">
+                <h2>My Skills:</h2>
+                <ul>  
+                    <li>Organized</li>
+                    <li>Disciplined</li>
+                    <li>Attentive to Detail</li>
+            </ul>
+            </div>
+            <div id="page3">
+                <h2>Do Your Own Research:</h2>
+                <form action="https://www.google.com/search">
+                    <input autocomplete="off" autofocus name="q" placeholder="type" type="search">
+                    <input type="submit" value="Google Search"> 
+                </form>
+            </div>
+            <div id="page4">
+                <h2>Links:</h2>
+                View my Linkedin Profile at => <a href="https://www.linkedin.com/in/daniel-doehler-3ba972194">Daniel Doehler</a>
+            </div>
     </body>
 </html>
